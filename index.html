@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="scripts.js"></script>
-    <title> Oleksandr Zaritskyi</title>
+    <title> TEAM KILLSIDE </title>
 </head>
-<body>
+<div class="body-style">
+<body> 
+    <div id="loading-screen">
+        <img id="loading-image" src="loader.gif" alt="Loading">
+      </div>
+
+
     <div class="main-cont">
         <div class="profile">
             <div class="profile-top">
                 <img src="profile1.jpg" alt="Profile picture" class="profile-image">
                 <div class="profile-info">
                     <div class="profile-name">
-                        Oleksandr (Olympia)
-                        <div class="profile-specialisation">
-                            Cybersecurity specialist
-                        </div>
+                        <span> Oleksandr (Olympia) <span>
                     </div>
+                        <div class="profile-specialisation">
+                            <div class="secicon">
+                            <img src="secicon.svg">
+                            </div>
+                            <span> Cybersecurity specialist <span>
+                        </div>
                 </div>
             </div>
             <div class="profile-details">
@@ -83,7 +92,16 @@
                 </section>
             </div>
             
-            
+            <div class="skill-list">
+                <header class="list-h"> OFFICIAL DISCORD PARTNER </header>
+                <ul>
+                    <li> Discord API </li>
+                    <li> Discord MGM</li>
+                    <li> Discord DSG </li>
+                    <li> Telegram API </li>
+                </ul>
+            </div>
+
             <div class="links">
                 <div class="inst">
                     <a href="https://www.instagram.com/viaolympia/" target="_blank">
@@ -109,7 +127,7 @@
         </div>
     <div class="infocont">
         <div class="fcont">
-            <p class="info"> Lorem Ipsum </p>
+            <p class="info"> Discord Dev </p>
             <div class="infotext">
                 <p class="text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -130,7 +148,7 @@
             </div>
         </div>
         <div class="scont">
-            <p class="info"> Lorem Ipsum </p>
+            <p class="info"> Telegram Dev </p>
             <div class="infotext">
                 <p class="text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -151,7 +169,7 @@
             </div>
         </div>
         <div class="tcont">
-            <p class="info"> Lorem Ipsum </p>
+            <p class="info"> Web Dev </p>
             <div class="infotext">
                 <p class="text">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -174,7 +192,7 @@
     </div>
     <div class="rightmenu">
         <div class="tab">
-        <img src="tab.png" alt="TAB IMAGE" class="tabimg" id="context-image">
+        <img src="tab.png" alt="TAB IMAGE" class="tabimg" id="fullscreen-button">
         </div>
         <div class="context-menu" id="context-menu">
             <ul>
@@ -183,7 +201,7 @@
                 <li onclick="handleOption('option3')">As soon as</li>
             </ul>
         </div>
-        <img src="sun white.png" alt="theme change" class="whitetheme" id="theme-button" onclick="toggleTheme()">
+        <img src="sun white.png" alt="theme change" class="whitetheme" id="theme-button">
     </div>
     
     
@@ -194,4 +212,5 @@
     
 
 </body>
+</div>
 </html>

@@ -25,6 +25,32 @@ function handleOption(option) {
 }
 
 document.addEventListener('click', function (e) {
+    var contextMenu = document.getElementById('context-menu');
+    var contextImage = document.getElementById('context-image');
+
+    if (e.target.id === 'context-image') {
+        e.preventDefault();
+
+        
+        contextMenu.style.position = 'fixed';
+        contextMenu.style.display = 'block';
+        contextMenu.style.left = e.clientX + 'px';
+        contextMenu.style.top = e.clientY + 'px';
+    } else {
+        contextMenu.style.display = 'none';
+    }
+});
+
+
+
+
+function handleOption(option) {
+    
+    console.log('Выбрана опция:', option);
+    
+}
+
+document.addEventListener('click', function (e) {
     var themeButton = document.getElementById('theme-button');
 
     if (e.target.id === 'theme-button') {
@@ -91,6 +117,73 @@ document.addEventListener('DOMContentLoaded', function() {
         logo.src = 'killsideweb_light.jpg';
     }
 });
+
+
+window.addEventListener("load", function () {
+    var loadingScreen = document.getElementById("loading-screen");
+
+    // По завершении анимации (3 секунды), добавим класс "loaded"
+    setTimeout(function () {
+      loadingScreen.classList.add("loaded");
+    }, 2000);
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var fullscreenButton = document.getElementById('fullscreen-button');
+    
+    if (fullscreenButton) {
+      fullscreenButton.addEventListener('click', toggleFullscreen);
+    }
+    function toggleFullscreen() {
+        if (!document.fullscreenElement && !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement && !document.msFullscreenElement) {
+          if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+          } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+            document.documentElement.mozRequestFullScreen();
+          } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            document.documentElement.webkitRequestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+            document.documentElement.msRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+          }
+        }
+      }
+      
+      var fullscreenButton = document.getElementById('fullscreen-button');
+      fullscreenButton.addEventListener('click', toggleFullscreen);
+      
+      // Прослуховування події для зміни стилів при входженні/виходженні з повноекранного режиму
+      document.addEventListener('fullscreenchange', function () {
+        document.body.classList.toggle('fullscreen', !!document.fullscreenElement);
+      });
+      
+      document.addEventListener('mozfullscreenchange', function () {
+        document.body.classList.toggle('fullscreen', !!document.mozFullScreenElement);
+      });
+      
+      document.addEventListener('webkitfullscreenchange', function () {
+        document.body.classList.toggle('fullscreen', !!document.webkitFullscreenElement);
+      });
+      
+      document.addEventListener('msfullscreenchange', function () {
+        document.body.classList.toggle('fullscreen', !!document.msFullscreenElement);
+      });
+  });
+      
+  
+
+
+
 
 
 
