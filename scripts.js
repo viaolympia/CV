@@ -125,7 +125,7 @@ window.addEventListener("load", function () {
     // По завершении анимации (3 секунды), добавим класс "loaded"
     setTimeout(function () {
       loadingScreen.classList.add("loaded");
-    }, 2000);
+    }, 4000);
   });
 
   document.addEventListener('DOMContentLoaded', function () {
